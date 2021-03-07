@@ -7,7 +7,7 @@ Aller vers le [sujet du projet](http://miageprojet2.unice.fr/Intranet_de_Michel_
 
     - Je devais effectuer le projet avec un autre étudiant (Manotiana), mais ce dernier ayant quitté le Master 2 MBDS pour des raisons personnels, j'ai effectué le projet seul.
 
-Les données utlisée pour les tests se trouve [ici](Données.json).
+Les données utlisée pour les tests se trouve [inbci](assignment-app/Données.json).
 
 ## Travaux effectués
 
@@ -29,7 +29,8 @@ Les données utlisée pour les tests se trouve [ici](Données.json).
 
 
 ### Visuel
-    - Test de différents visu notamment avec des tableaux de devoir en mode scrolling (défaut) et un autre en mode pagination (erreurs).
+    - Amélioration du visuel d'accueil et de détail
+    - Test de différents visus notamment avec des tableaux de devoir en mode scrolling (défaut) et un autre en mode pagination (erreurs).
 
 # Difficultés
     - Gestion des conditions *ngIF pour l'affichage ou non des propriétés selon le rendu ou non des devoirs
