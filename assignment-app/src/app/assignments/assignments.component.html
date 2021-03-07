@@ -1,0 +1,132 @@
+<br>
+<div class="container">
+    <div fxLayout="column" fxLayoutGap="20px" fxLayout.gt-md="row" fxLayoutAlign="space-around center">
+        <a routerLink="/add">
+            <button class="ajouterBtn" mat-raised-button color="primary">
+                  <mat-icon>add</mat-icon> Ajouter Devoir
+              </button>
+        </a>
+    </div>
+</div>
+<br>
+
+<div class="mat-elevation-z8">
+    <div class="container">
+        <div fxLayout="row" fxLayoutAlign="center center" class="content">
+            <mat-card class="card">
+                <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+                    <h3>Tableau des devoirs</h3>
+                </mat-card-title>
+                <mat-card-content>
+                    <div class="example-container mat-elevation-z8">
+                        <mat-table [dataSource]="dataSource" (scroll)="onTableScroll($event)">
+                            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                            <mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="'/assignment/' + row.id"></mat-row>
+
+                            <ng-container matColumnDef="Nom">
+                                <mat-header-cell *matHeaderCellDef> Nom </mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.nom | uppercase}} </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="Matiere">
+                                <mat-header-cell *matHeaderCellDef> Matiere </mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.matiere}} </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="Auteur">
+                                <mat-header-cell *matHeaderCellDef> Auteur </mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.auteur}} </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="Note">
+                                <mat-header-cell *matHeaderCellDef> Note </mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.note}} </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="Date De Rendu">
+                                <mat-header-cell *matHeaderCellDef> Date De Rendu </mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.dateDeRendu | date}} </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="Remarques">
+                                <mat-header-cell *matHeaderCellDef> Remarques </mat-header-cell>
+                                <mat-cell *matCellDef="let row"> <span class="truncate-text"> {{row.remarques}} </span></mat-cell>
+                            </ng-container>
+                        </mat-table>
+
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+
+<!--
+<div class="example-container mat-elevation-z8">
+    <mat-table [dataSource]="assignments">
+
+        <ng-container matColumnDef="Nom">
+            <mat-header-cell *matHeaderCellDef> Nom </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.nom}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Matiere">
+            <mat-header-cell *matHeaderCellDef> Matiere </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.matiere}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Auteur">
+            <mat-header-cell *matHeaderCellDef> Auteur </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.auteur}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Note">
+            <mat-header-cell *matHeaderCellDef> Note </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.note}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Date De Rendu">
+            <mat-header-cell *matHeaderCellDef> Date De Rendu </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.dateDeRendu | date}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Remarques">
+            <mat-header-cell *matHeaderCellDef> Remarques </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.remarques}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="'/assignment/' + row.id"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+-->
+
+<!--
+<cdk-virtual-scroll-viewport #scroll itemSize="50" class="scroll-viewport">
+
+    <mat-list *cdkVirtualFor="let assignment of assignments">
+        <nav>
+            <a routerLink="/assignment/{{this.assignment.id}}">
+                <mat-list-item (click)="assignmentClique(assignment)">
+                    <h1 appRendu *ngIf="assignment.rendu; else nonSoumis">
+                        Le devoir "{{assignment.nom}}" a été rendu.
+                    </h1>
+                    <p class=date *ngIf="assignment.rendu;"> Date de rendu : {{assignment.dateDeRendu |date}}</p>
+
+                    <ng-template #nonSoumis>
+                        <h1>Le devoir "{{assignment.nom}}" n'a pas été rendu.</h1>
+                    </ng-template>
+
+                </mat-list-item>
+                <h3 mat-subheader>matiere : {{assignment.matiere}}</h3>
+                <h3 mat-subheader>auteur : {{assignment.auteur}}</h3>
+                <h3 *ngIf="assignment.rendu;" mat-subheader>note : {{assignment.note}}/20</h3>
+                <mat-icon class="icon">delete</mat-icon>
+                <mat-divider></mat-divider>
+            </a>
+        </nav>
+    </mat-list>
+</cdk-virtual-scroll-viewport>
+-->

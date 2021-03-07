@@ -1,0 +1,38 @@
+.card {
+    min-width: 80%;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    min-width: 100%;
+}
+
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+}
+
+a {
+    cursor: pointer;
+}
+
+mat-cell>span.truncate-text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.remark-form {
+    width: 100%;
+    height: 200px;
+    overflow: auto;
+    scrollbar-face-color: #CE7E00;
+    scrollbar-shadow-color: #FFFFFF;
+    scrollbar-highlight-color: #6F4709;
+    scrollbar-3dlight-color: #FFFF;
+    scrollbar-darkshadow-color: #6F4709;
+    scrollbar-track-color: #FFE8C1;
+    scrollbar-arrow-color: #6F4709;
+}

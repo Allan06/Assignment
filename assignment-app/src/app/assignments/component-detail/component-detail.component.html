@@ -1,0 +1,27 @@
+<div class="container">
+    <mat-card *ngIf="assignementTransmis">
+
+        <mat-card-title> <u>{{assignementTransmis.nom | uppercase}} </u></mat-card-title>
+        <mat-card-subtitle> <br> <b>Auteur : </b>{{assignementTransmis.auteur}} </mat-card-subtitle>
+        <mat-card-subtitle> <b>Matiere : </b> {{assignementTransmis.matiere}} </mat-card-subtitle>
+        <mat-card-subtitle> <b>Note : {{assignementTransmis.note}}/20 <br><br> Remarques :</b> <br> </mat-card-subtitle>
+        <mat-card-subtitle class="remark-form"> {{assignementTransmis.remarques}} </mat-card-subtitle>
+
+        <mat-card-subtitle> <b> {{assignementTransmis.dateDeRendu | date}} </b></mat-card-subtitle>
+        <mat-checkbox *ngIf="!assignementTransmis.rendu" (click)="onAssignementRendu()">
+            Assignment rendu
+        </mat-checkbox>
+
+        <section fxLayout fxLayoutAlign="space-between center">
+            <div>
+                <button mat-flat-button color="primary" [disabled]="!loggedIn()" (click)="onClickEdit()">
+                EDIT
+              </button>
+            </div>
+
+            <button mat-flat-button color="warn" (click)="onDelete() ">
+              DELETE
+            </button>
+        </section>
+    </mat-card>
+</div>

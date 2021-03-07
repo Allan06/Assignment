@@ -1,0 +1,95 @@
+.rendu {
+    color: 'green';
+}
+
+.nonRendu {
+    color: 'red';
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.ajouterBtn {
+    align-self: flex-end;
+}
+
+.scroll-viewport {
+    height: 1000px;
+    width: 1000px;
+    border-left: 30px solid #a46e1c;
+}
+
+.date {
+    text-align: right;
+    font: bold;
+}
+
+.card {
+    min-width: 80%;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    min-width: 100%;
+}
+
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+}
+
+a {
+    cursor: pointer;
+}
+
+mat-cell>span.truncate-text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+mat-row {
+    min-height: 20px;
+    font-family: Verdana;
+    font-size: 13px;
+    color: #1a084c;
+}
+
+mat-cell {
+    height: 80px;
+    font-family: Verdana, sans-serif;
+    font-size: 11px;
+    color: #1a084c;
+}
+
+mat-header-cell,
+mat-header-row,
+.mat-header-cell-def {
+    min-height: 35px;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 16px;
+    color: #4c2908;
+    margin-bottom: 5px;
+    top: 0;
+    position: sticky;
+    z-index: 1;
+    background-color: inherit;
+}
+
+mat-grid-tile {
+    background: rgb(219, 171, 66);
+    margin-left: -600px;
+}
+
+.mat-row:nth-child(even) {
+    background-color: rgb(228, 228, 228);
+}
+
+.mat-row:nth-child(odd) {
+    background-color: rgb(255, 255, 255);
+}
