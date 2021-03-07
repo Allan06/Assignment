@@ -7,7 +7,7 @@ Aller vers le [sujet du projet](http://miageprojet2.unice.fr/Intranet_de_Michel_
 
     - Je devais effectuer le projet avec un autre étudiant (Manotiana), mais ce dernier ayant quitté le Master 2 MBDS pour des raisons personnels, j'ai effectué le projet seul.
 
-Les données utlisée pour les tests se trouve [inbci](assignment-app/Données.json).
+Les données utlisée pour les tests se trouve [ici](assignment-app/Données.json).
 
 ## Travaux effectués
 
